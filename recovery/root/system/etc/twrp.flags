@@ -3,8 +3,8 @@
 
 # Logical partitions
 system     /system     f2fs    wait,logical,first_stage_mount
-system     /system     ext4    avb=vbmeta,logical,first_stage_mount
-system     /system     erofs   avb=vbmeta,logical,first_stage_mount
+system     /system     ext4    wait,logical,first_stage_mount
+system     /system     erofs   wait,logical,first_stage_mount
 vendor     /vendor     f2fs    wait,logical,first_stage_mount
 product    /product    f2fs    wait,logical,first_stage_mount
 odm        /odm        f2fs    wait,logical,first_stage_mount
@@ -16,7 +16,7 @@ odm        /odm        f2fs    wait,logical,first_stage_mount
 /odm_image      emmc    /dev/block/bootdevice/by-name/odm            flags=backup=0;flashimg;display="ODM"
 
 # Physical partitions
-/boot           emmc    /dev/block/bootdevice/by-name/boot
+/boot           emmc    /dev/block/bootdevice/by-name/boot           flags=backup=1;flashimg;display="Boot"
 /vendor_boot    emmc    /dev/block/bootdevice/by-name/vendor_boot    flags=backup=1;flashimg;display="GKI"
 /recovery       emmc    /dev/block/bootdevice/by-name/recovery       flags=backup=1;flashimg;display="Recovery"
 /prism_image    emmc    /dev/block/bootdevice/by-name/prism          flags=backup=1;flashimg;display="Prism"
