@@ -1,4 +1,4 @@
-_This device tree is based on Firmware SM-A135F region XXV_
+_(This device tree is based on Firmware SM-A135F region XXV)_
 ## Other Source 
 - [Kernel Source](https://github.com/VThang51/android_kernel_samsung_a13xx)
 - [Platform Source](https://github.com/VThang51/android_platform_samsung_a13)
